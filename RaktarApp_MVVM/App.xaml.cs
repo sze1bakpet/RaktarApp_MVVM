@@ -26,5 +26,6 @@ namespace RaktarApp_MVVM
 
             base.OnStartup(e);
         }
+
     }
 }

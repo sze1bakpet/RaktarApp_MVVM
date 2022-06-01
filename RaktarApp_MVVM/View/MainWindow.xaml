@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RaktarApp_MVVM"
         mc:Ignorable="d"
-        Title="Raktárkészlet" Height="500" Width="400">
+        Title="Raktárkészlet" Height="550" Width="400">
     <StackPanel>
+        <Button x:Name="btExit" Margin="110 5 110 0" Width="110" Content="Kilépés" Command="{Binding CloseCommand}"></Button>
         <TextBlock Margin="80 20 80 0" Text="A termék neve" TextAlignment="Center"></TextBlock>
         <TextBox x:Name="txtTermeknev" Margin="75 5 75 10" Text="{Binding Termeknev,Mode=TwoWay}" TextAlignment="Center" Background="#FFF3F3F3"></TextBox>
         <TextBlock Margin="50 0 50 0" Text="Mennyiség" TextAlignment="Center"></TextBlock>
@@ -15,9 +16,11 @@
         <TextBox x:Name="txtMennyisegmertek" Margin="150 5 150 0" Text="{Binding Mennyisegmertek,Mode=TwoWay}" TextAlignment="Center" Background="#FFF3F3F3"></TextBox>
         <TextBlock Margin="80 20 80 0" Text="Egységár" TextAlignment="Center"></TextBlock>
         <TextBox x:Name="txtEgysegar" Margin="150 5 150 0" Text="{Binding Egysegar,Mode=TwoWay}" TextAlignment="Center" Background="#FFF3F3F3"></TextBox>
+        <Button x:Name="btCompute" Margin="10 20" Width="50" Content="OK" Command="{Binding ComputeCommand}"></Button>
         <TextBlock Margin="80 20 80 0" Text="Raktáron lévő termék összértéke" TextAlignment="Center"></TextBlock>
-        <TextBlock Margin="80 0 80 0" Text="{Binding TermekOsszAr,Mode=OneWay}" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="tbTermekOsszAr" Margin="80 0 80 0" Text="{Binding TermekOsszAr}" TextAlignment="Center"></TextBlock>
         <TextBlock Margin="80 20 80 0" Text="Összesítés:" TextAlignment="Center"></TextBlock>
-        <TextBlock Margin="50 0 50 0" Text="{Binding Termek}"></TextBlock>
+        <TextBlock x:Name="tbTermek" Margin="50 0 50 0" Text="{Binding Termek}"></TextBlock>
+        
     </StackPanel>
 </Window>

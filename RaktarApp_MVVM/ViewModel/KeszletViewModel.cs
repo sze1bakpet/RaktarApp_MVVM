@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using oop.Model;
 using ViewModel.BaseClass;
 
@@ -15,6 +16,22 @@ namespace RaktarApp_MVVM.ViewModel
         public KeszletViewModel()
         {
             keszlet = new Keszlet();
+            CloseCommand = new RelayCommand(execute => CloseWindow());
+            ComputeCommand = new RelayCommand(execute => ComputeResult());
+        }
+
+        public RelayCommand CloseCommand { get; private set; }
+        public RelayCommand ComputeCommand { get; private set; }
+
+        public void CloseWindow()
+        {
+            Application.Current.Windows[0].Close();
+        }
+
+        public void ComputeResult()
+        {
+            OnPropertyChanged("TermekOsszAr");
+            OnPropertyChanged("Termek");
         }
 
         public string Termeknev
